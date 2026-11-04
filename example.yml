@@ -1,4 +1,4 @@
-name: YouTube Timestamped Transcript - FlashData
+name: YouTube Transcript
 on:
   workflow_dispatch: {}
 permissions:
@@ -7,15 +7,14 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - name: Export existing automatic-caption segments with timestamps and video
-          citations for a retrieval pipeline.
+      - name: YouTube Transcript
         id: data
-        uses: rocosen/flashdata-youtube-transcript-action@v0.1.0
+        uses: rocosen/flashdata-youtube-transcript-action@v0.1.1
         with:
           api-key: ${{ secrets.FLASHDATA_API_KEY }}
           video-id: dQw4w9WgXcQ
           options-json: '{"language":"en","auto":true}'
-      - name: Save data for the next pipeline stage
+      - name: Upload results
         uses: actions/upload-artifact@v4
         with:
           name: youtube-transcript

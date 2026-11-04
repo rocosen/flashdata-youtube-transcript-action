@@ -1,6 +1,6 @@
-name: YouTube Timestamped Transcript - FlashData
-description: Export existing automatic-caption segments with timestamps and
-  video citations for a retrieval pipeline.
+name: YouTube Transcript
+description: Get existing YouTube transcripts with text, timestamps and language
+  metadata. Export as JSON and JSONL.
 author: FlashData
 branding:
   icon: search
